@@ -8,39 +8,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.myapplication.MainActivity">
+    tools:context="com.example.wifi.MainActivity">
 
     <Button
-        android:id="@+id/bt_search"
+        android:onClick="searchWifi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="搜索蓝牙" />
+        android:text="扫描WIFI" />
     <TextView
-        android:id="@+id/tv"
-        android:text="一共搜索到0个设备"
+        android:text="一共发现0个WIFI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ListView
         android:layout_weight="99"
-        android:id="@+id/lv"
+        android:id="@+id/lv_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:onClick="openBlue"
+            android:onClick="openWifi"
             android:layout_weight="1"
-            android:id="@+id/bt_open"
-            android:text="打开蓝牙"
+            android:text="打开"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
-            android:onClick="closeBlue"
+            android:onClick="closeWifi"
             android:layout_weight="1"
-            android:id="@+id/bt_close"
-            android:text="关闭蓝牙"
+            android:text="关闭"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
 </LinearLayout>

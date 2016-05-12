@@ -10,14 +10,18 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/bluetooth" />
+            <option value="$PROJECT_DIR$/can" />
             <option value="$PROJECT_DIR$/myapplication" />
+            <option value="$PROJECT_DIR$/wifi" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/bluetooth" />
+            <option value="$PROJECT_DIR$/can" />
             <option value="$PROJECT_DIR$/myapplication" />
+            <option value="$PROJECT_DIR$/wifi" />
           </set>
         </option>
       </GradleProjectSettings>

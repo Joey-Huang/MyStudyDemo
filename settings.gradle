@@ -1,2 +1,2 @@
-include ':bluetooth'
+include ':bluetooth', ':wifi', ':can'
 include ':myapplication'

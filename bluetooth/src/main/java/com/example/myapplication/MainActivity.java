@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv;
     private List<DeviceInfo> infos;
     private MyAdapter myAdapter;
+    private BluetoothAdapter bluetoothAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,22 +39,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         infos = new ArrayList<DeviceInfo>();
         myAdapter = new MyAdapter();
         lv.setAdapter(myAdapter);
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     @Override
     public void onClick(View v) {
-        BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-        if (adapter == null) {
+        if (bluetoothAdapter == null) {
             //不具备蓝牙功能
             e("不具备蓝牙功能");
         } else {
-            if (!adapter.enable()) {
+            if (!bluetoothAdapter.enable()) {
                 e("蓝牙没开");
                 Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivity(intent);
             }
 
-            Set<BluetoothDevice> bondedDevices = adapter.getBondedDevices();
+            Set<BluetoothDevice> bondedDevices = bluetoothAdapter.getBondedDevices();
             //获取蓝牙设备
             if (bondedDevices.size() > 0) {
                 Iterator<BluetoothDevice> iterator = bondedDevices.iterator();
@@ -86,6 +87,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.e("调试", text);
     }
 
+    public void openBlue(View view) {
+        if (bluetoothAdapter!=null){
+            bluetoothAdapter.enable();
+        }
+    }
+    public void closeBlue(View view) {
+        if (bluetoothAdapter!=null){
+            bluetoothAdapter.disable();
+        }
+    }
     class DeviceInfo {
         private String name;
         private String address;
